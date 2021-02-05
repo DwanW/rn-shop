@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native'
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux'
 import { StyleSheet, Text, View } from 'react-native';
 import productsReducer from './store/reducers/products.reducer';
+import StackNavigation from './navigation/RootNavigator'
 
 const rootReducer = combineReducers({
   products: productsReducer
@@ -16,10 +18,9 @@ const store = createStore(rootReducer)
 export default function App() {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
+      <NavigationContainer>
+        <StackNavigation />
+      </NavigationContainer>
     </Provider>
   );
 }

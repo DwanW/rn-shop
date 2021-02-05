@@ -1,4 +1,4 @@
-import PRODUCTS from '../../data/dummy-data.js'
+import PRODUCTS from '../../data/dummy-data'
 
 interface initialStateObj {
     availableProducts: Array<any>,
